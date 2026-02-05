@@ -221,75 +221,13 @@ interface TodoItem {
 
 - Todos are stored in a JavaScript array in memory
 - Data does NOT persist between server restarts
-- Suitable for the requirements and development/testing
 
 ### Key Functions
 
-**`addTodo(text, priority)`**
-- Validates inputs
-- Creates a new TodoItem with unique ID
-- Returns the created item
-- Throws error if validation fails
+**`addTodo(text, priority)`** - Validates and creates a new todo with unique ID
 
-**`getTodos()`**
-- Returns all todos
-- Sorted by priority (ascending), then by ID
+**`getTodos()`** - Returns all todos sorted by priority (ascending), then by ID
 
-**`deleteTodo(id)`**
-- Deletes todo by ID
-- Returns `true` if successful, `false` if not found
+**`deleteTodo(id)`** - Deletes todo by ID, returns true if successful
 
-**`getMissingPriorities()`**
-- Finds all integers from 1 to max priority not in the list
-- Uses a Set for O(1) lookups
-- Returns empty array if no todos or no gaps
-
-## Design Decisions
-
-### Why TypeScript?
-- Type safety catches errors before runtime
-- Better autocomplete and IDE support
-- Self-documenting code with interfaces
-
-### Why Express?
-- Minimal and flexible
-- Perfect for building RESTful APIs
-- Large ecosystem and community support
-
-### Why in-memory storage?
-- Meets requirements (no persistence needed)
-- Simplest implementation
-- Fast for testing and development
-
-### Why separate business logic from API routes?
-- Easier to extend (add CLI, add different API layer, add tests)
-- Functions are pure and testable
-- Clear separation of concerns
-
-## Error Handling
-
-- **400 Bad Request:** Invalid input or malformed request
-- **404 Not Found:** Resource (todo) doesn't exist
-- **201 Created:** Todo successfully created
-- **200 OK:** Request successful
-
-All errors include a descriptive error message.
-
-## Future Extensions
-
-- **Persistence:** Add database (MongoDB, PostgreSQL)
-- **Authentication:** Add user authentication and per-user todos
-- **CLI Interface:** Command-line interface for the same logic
-- **Web UI:** React/Vue frontend
-- **Filtering:** Filter todos by priority range, search by text
-- **Editing:** Update existing todos
-- **Marking complete:** Add done/completed status
-- **Categories/Tags:** Organize todos by categories
-
-## Author
-
-Created as a take-home assignment for OpsLevel.
-
-## License
-
-MIT
+**`getMissingPriorities()`** - Finds all integers from 1 to max priority not in the list
