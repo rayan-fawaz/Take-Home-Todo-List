@@ -21,10 +21,13 @@ Missing priorities would be: `[2, 4, 6, 8, 9, 10, 11]`
 
 ## Tech Stack
 
-- **Runtime:** Node.js
-- **Language:** TypeScript
-- **Framework:** Express.js
-- **CORS:** Enabled for cross-origin requests
+**Backend:**
+- Node.js + Express.js
+- TypeScript
+
+**Frontend:**
+- React + TypeScript
+- Vite
 
 ## Project Structure
 
@@ -35,33 +38,39 @@ backend/
 │   ├── todo.ts        # Business logic (add, delete, list, missing priorities)
 │   ├── server.ts      # Express server and API routes
 ├── package.json
-├── tsconfig.json
-└── node_modules/
+└── tsconfig.json
+frontend/
+├── src/
+│   ├── App.tsx        # Main React component
+│   ├── types.ts       # Shared type definitions
+│   └── main.tsx       # Entry point
+├── package.json
+└── vite.config.ts
 ```
 
 ## Getting Started
 
-### Installation
+### Backend
 
 ```bash
 cd backend
 npm install
-```
-
-### Running the Server
-
-```bash
 npm start
 ```
 
-The server will start on `http://localhost:3001`
+Backend runs on `http://localhost:3001`
 
-You should see:
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
 ```
-Starting server...
-Port set to: 3001
-Server running on http://localhost:3001
-```
+
+Frontend runs on `http://localhost:5173`
+
+**Note:** Start the backend first, then the frontend.
 
 ## API Endpoints
 
